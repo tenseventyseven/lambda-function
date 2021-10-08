@@ -18,7 +18,7 @@ npm i node-fetch
 To build and run:
 
 ```shell
-docker build -t lambda-function . && docker run 9000:8080 lambda-function
+docker build -t lambda-function . && docker run --rm -p 9000:8080 lambda-function
 ```
 
 To test:
@@ -29,6 +29,6 @@ curl -X POST "http://localhost:9000/2015-03-31/functions/function/invocations" -
 
 Observations:
 
-1. As per https://github.com/node-fetch/node-fetch#loading-and-configuring-the-module, it seems that `node-fetch` version 3 won't work because we're transpiling to `commonjs`. But is this just because I don't have it set up properly?
+1. As per [here](https://github.com/node-fetch/node-fetch#loading-and-configuring-the-module), it seems that `node-fetch` version 3 won't work because we're transpiling to `commonjs`. But is this just because I don't have it set up properly?
 
 2. Why when running the `node-fetch` version 3 build, does the error raised not get caught?
